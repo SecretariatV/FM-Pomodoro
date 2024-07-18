@@ -1,0 +1,21 @@
+.radio {
+  display: none;
+}
+
+.label {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.4s;
+
+  color: var(--gray);
+  font-size: 14px;
+  font-weight: bold;
+
+  &.active {
+    color: var(--very-dark-blue);
+  }
+}

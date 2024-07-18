@@ -1,0 +1,63 @@
+.input {
+  border-radius: 10px;
+  background-color: #eff1fa;
+  width: 140px;
+  height: 48px;
+  padding: 9px 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  margin-top: 8px;
+
+  &:hover {
+    .input_control_btn_nomal {
+      opacity: 0;
+    }
+    .input_control_btn_hover {
+      opacity: 1;
+    }
+  }
+
+  &_number {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e213f;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &_control {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    &_btn {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+      outline: none;
+      position: relative;
+
+      &_hover {
+        transition: all ease-in-out 0.3s;
+        position: absolute;
+        top: 6px;
+        opacity: 0;
+      }
+
+      &_nomal {
+        transition: all ease-in-out 0.3s;
+      }
+    }
+  }
+}

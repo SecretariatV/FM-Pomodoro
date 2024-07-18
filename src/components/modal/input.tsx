@@ -28,7 +28,7 @@ const Input: FC<IProps> = ({ name, setting, setSetting, value }) => {
   };
 
   return (
-    <label htmlFor={name}>
+    <label htmlFor={name} className={S.label}>
       {name}
       <div className={S.input}>
         <input

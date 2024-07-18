@@ -1,3 +1,5 @@
+@use "@styles/globalStyles.scss" as G;
+
 .body {
   border-radius: 31.5px;
   width: 373px;
@@ -9,6 +11,10 @@
   overflow: hidden;
   position: relative;
   z-index: 4;
+
+  @include G.breakpoint("xm") {
+    width: 327px;
+  }
 
   &_wrapper {
     display: flex;

@@ -12,6 +12,7 @@ const Clock: FC<IProps> = ({ setting }) => {
   const [totalTime, setTotalTime] = useState<number>(0);
   const [timer, setTimer] = useState<NodeJS.Timeout | null>(null);
   const [step, setStep] = useState<string>("start");
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
   useLayoutEffect(() => {
     const tempTime =
@@ -48,6 +49,18 @@ const Clock: FC<IProps> = ({ setting }) => {
     };
   }, [step]);
 
+  useLayoutEffect(() => {
+    const getWidth = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", getWidth);
+
+    return () => {
+      window.removeEventListener("resize", getWidth);
+    };
+  }, []);
+
   const handleClick = () => {
     if (step === "start") {
       setStep("pause");
@@ -60,7 +73,8 @@ const Clock: FC<IProps> = ({ setting }) => {
     }
   };
 
-  const radius = 164;
+  const radius = width! < 540 ? 116 : 164;
+  const x = width! < 540 ? 124 : 169.5;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = (circumference * time) / totalTime - circumference;
 
@@ -69,9 +83,9 @@ const Clock: FC<IProps> = ({ setting }) => {
       <div className={S.body_wrapper}>
         <svg>
           <circle
-            cx="169.5"
-            cy="169.5"
-            r="164"
+            cx={x}
+            cy={x}
+            r={radius}
             strokeWidth={11}
             strokeLinecap="round"
             fill="none"

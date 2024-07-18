@@ -1,3 +1,5 @@
+@use "@styles/globalStyles.scss" as G;
+
 .input {
   border-radius: 10px;
   background-color: #eff1fa;
@@ -59,5 +61,17 @@
         transition: all ease-in-out 0.3s;
       }
     }
+  }
+}
+
+.label {
+  color: #1e213f64;
+  font-size: 12px;
+  font-weight: 700;
+
+  @include G.breakpoint("xm") {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
   }
 }

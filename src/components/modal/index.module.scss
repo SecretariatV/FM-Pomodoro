@@ -18,6 +18,10 @@
   border-radius: 25px;
   background-color: var(--white);
 
+  @include G.breakpoint("xm") {
+    width: 327px;
+  }
+
   &_header {
     padding: 34px 40px 30px;
     border-bottom: 1px solid #e3e1e1;
@@ -25,10 +29,18 @@
     align-items: flex-end;
     justify-content: space-between;
 
+    @include G.breakpoint("xm") {
+      padding: 24px;
+    }
+
     &_title {
       font-size: 28px;
       font-weight: 700;
       color: #161932;
+
+      @include G.breakpoint("xm") {
+        font-size: 20px;
+      }
     }
 
     &_close {
@@ -46,6 +58,10 @@
     gap: 24px;
     position: relative;
 
+    @include G.breakpoint("xm") {
+      padding: 24px 24px 60px;
+    }
+
     &_timesetting {
       display: flex;
       flex-direction: column;
@@ -57,6 +73,11 @@
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 5px;
+
+        @include G.breakpoint("xm") {
+          text-align: center;
+          font-size: 11px;
+        }
       }
 
       &_group {
@@ -64,10 +85,10 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
 
-        label {
-          color: #1e213f64;
-          font-size: 12px;
-          font-weight: 700;
+        @include G.breakpoint("xm") {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(3, 1fr);
+          gap: 6px;
         }
       }
     }
@@ -78,18 +99,30 @@
       grid-template-columns: 1fr auto;
       align-items: center;
 
+      @include G.breakpoint("xm") {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 18px;
+      }
+
       &_title {
         text-transform: uppercase;
         color: #161932;
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 5px;
+
+        @include G.breakpoint("xm") {
+          text-align: center;
+          font-size: 11px;
+        }
       }
 
       &_group {
         display: flex;
         align-items: center;
         gap: 16px;
+        justify-self: center;
 
         &_btn {
           border-radius: 100%;

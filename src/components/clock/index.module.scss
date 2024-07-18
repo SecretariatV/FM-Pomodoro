@@ -1,3 +1,5 @@
+@use "@styles/globalStyles.scss" as G;
+
 .body {
   border-radius: 100%;
   width: 410px;
@@ -7,6 +9,11 @@
   position: relative;
   filter: drop-shadow(-50px -50px 100px #272c5a)
     drop-shadow(50px 50px 100px #121530);
+
+  @include G.breakpoint("xm") {
+    width: 300px;
+    padding: 16px;
+  }
 
   &_wrapper {
     background-color: var(--very-dark-blue);
@@ -26,6 +33,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include G.breakpoint("xm") {
+      font-size: 80px;
+    }
   }
 
   &_btn {
@@ -45,6 +56,10 @@
     text-transform: uppercase;
     cursor: pointer;
 
+    @include G.breakpoint("xm") {
+      transform: translate(-50%, -80px);
+    }
+
     &:hover {
       span {
         filter: drop-shadow(3px 3px 1px red) drop-shadow(-1px 3px 4px blue);
@@ -60,6 +75,11 @@
   svg {
     width: 339px;
     height: 339px;
+
+    @include G.breakpoint("xm") {
+      width: 248px;
+      height: 248px;
+    }
 
     circle {
       transform-origin: 50% 50%;
